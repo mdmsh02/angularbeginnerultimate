@@ -14,7 +14,7 @@ export class PassengerDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.passengerDashboardService.getPassenger().subscribe((data: Passenger[]) => this.passengers = data);
+    this.passengerDashboardService.getPassengers().subscribe((data: Passenger[]) => this.passengers = data);
   }
   handleRemove(event: Passenger) {
     this.passengerDashboardService.removePassenger(event).subscribe((data: Passenger) =>{

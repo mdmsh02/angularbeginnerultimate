@@ -8,6 +8,7 @@ import { PassengerDashboardComponent } from './container/passenger-dashboard/pas
 import { PassengerCountComponent } from './components/passenger-count/passenger-count.component';
 import { PassengerDetailComponent } from './components/passenger-detail/passenger-detail.component';
 import { PassengerDashboardService } from './passenger-dashboard.service';
+import { PassengerViewerComponent } from './container/passenger-viewer/passenger-viewer.component';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { PassengerDashboardService } from './passenger-dashboard.service';
       InMemoryDataService, {post204: false, put204: false, dataEncapsulation: false }
     )
   ],
-  declarations: [PassengerDashboardComponent, PassengerCountComponent, PassengerDetailComponent],
+  declarations: [PassengerDashboardComponent, PassengerCountComponent, PassengerDetailComponent, PassengerViewerComponent],
   exports: [
     PassengerDashboardComponent
   ],

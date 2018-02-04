@@ -17,8 +17,12 @@ export class PassengerDashboardService {
   }
   
 
-  getPassenger(): Observable<Passenger[]> {
+  getPassengers(): Observable<Passenger[]> {
     return this.http.get<Passenger[]>(PASSENGER_API);
+  }
+  getPassenger(id: number): Observable<Passenger> {
+    const url = `${PASSENGER_API}/${id}`
+    return this.http.get<Passenger>(url);
   }
   updatePassenger(passenger: Passenger): Observable<Passenger> {
     return this.http.put<Passenger>(`${PASSENGER_API}`,passenger,httpOptions).pipe(
