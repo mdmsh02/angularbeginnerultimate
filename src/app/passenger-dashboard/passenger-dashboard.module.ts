@@ -9,11 +9,15 @@ import { PassengerCountComponent } from './components/passenger-count/passenger-
 import { PassengerDetailComponent } from './components/passenger-detail/passenger-detail.component';
 import { PassengerDashboardService } from './passenger-dashboard.service';
 import { RouterModule, Route,  } from '@angular/router';
+import { PassengerViewerComponent } from './components/passenger-viewer/passenger-viewer.component';
 
 const routes: Route[] = [
   {
     path: 'passengers',
-    component: PassengerDashboardComponent
+    children: [
+      { path: '', component: PassengerDashboardComponent},
+      { path: ':id', component: PassengerViewerComponent}
+    ]
   }
 ]
 
@@ -29,7 +33,7 @@ const routes: Route[] = [
     ),
     RouterModule.forChild(routes)
   ],
-  declarations: [PassengerDashboardComponent, PassengerCountComponent, PassengerDetailComponent],
+  declarations: [PassengerDashboardComponent, PassengerCountComponent, PassengerDetailComponent, PassengerViewerComponent],
   providers: [PassengerDashboardService]
 })
 export class PassengerDashboardModule { }
