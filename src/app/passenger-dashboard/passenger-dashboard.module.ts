@@ -8,7 +8,14 @@ import { PassengerDashboardComponent } from './container/passenger-dashboard/pas
 import { PassengerCountComponent } from './components/passenger-count/passenger-count.component';
 import { PassengerDetailComponent } from './components/passenger-detail/passenger-detail.component';
 import { PassengerDashboardService } from './passenger-dashboard.service';
+import { RouterModule, Route,  } from '@angular/router';
 
+const routes: Route[] = [
+  {
+    path: 'passengers',
+    component: PassengerDashboardComponent
+  }
+]
 
 @NgModule({
   imports: [
@@ -19,12 +26,10 @@ import { PassengerDashboardService } from './passenger-dashboard.service';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {post204: false, put204: false, dataEncapsulation: false }
-    )
+    ),
+    RouterModule.forChild(routes)
   ],
   declarations: [PassengerDashboardComponent, PassengerCountComponent, PassengerDetailComponent],
-  exports: [
-    PassengerDashboardComponent
-  ],
   providers: [PassengerDashboardService]
 })
 export class PassengerDashboardModule { }

@@ -11,6 +11,7 @@ export class AppComponent {
 
   navs: Nav[] = [
     { link: '/', name: 'Home', exactMatch: true },
+    { link: '/passengers', name: 'Passengers', exactMatch: true },
     { link: '/oops', name: '404', exactMatch: false }
   ]
   constructor(){
